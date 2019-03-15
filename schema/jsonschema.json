@@ -1,0 +1,32 @@
+{
+  "bsonType": "object",
+  "required": [
+    "client_tag",
+    "client_id",
+    "client_secret",
+    "public_key",
+    "private_key"
+  ],
+  "properties": {
+    "client_tag": {
+      "bsonType": "string",
+      "description": "string identifying the client. required"
+    },
+    "client_id": {
+      "bsonType": "string",
+      "description": "string, uuid for client. required"
+    },
+    "client_secret": {
+      "bsonType": "string",
+      "description": "string, secret for client. required"
+    },
+    "public_key": {
+      "bsonType": "string",
+      "description": "string, public key"
+    },
+    "private_key": {
+      "bsonType": "string",
+      "description": "string, private key"
+    }
+  }
+}

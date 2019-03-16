@@ -1,9 +1,18 @@
 {
-  "name": "keys",
+  "name": "tokenadmin",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Mike Quinn <mike.quinn@scotland.pnn.police.uk>",
+  "author": "Mike Quinn <token@mikequinn.xyz>",
+  "bugs": {
+    "url": "https://github.com/mikeq/tokenadmin/issues",
+    "email": "token-bugs@mikequinn.xyz"
+  },
   "license": "MIT",
+  "bin": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikeq/tokenadmin"
+  },
   "dependencies": {
     "chalk": "^2.4.2",
     "clear": "^0.1.0",

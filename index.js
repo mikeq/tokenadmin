@@ -4,14 +4,7 @@ const figlet = require("figlet");
 const clear = require("clear");
 const chalk = require("chalk");
 
-const init = require("./lib/init");
-const add = require("./lib/add");
-const revoke = require("./lib/revoke");
-const output = require("./lib/output");
-const list = require("./lib/list");
-const generate = require("./lib/generate");
-const secret = require("./lib/secret");
-const email = require("./lib/email");
+const cmd = require("./lib");
 
 clear();
 console.log(chalk.blue(figlet.textSync("Token Admin")));
@@ -23,7 +16,7 @@ yargs
     "Initialise the token server database",
     yargs => {},
     argv => {
-      init();
+      cmd.init();
     }
   )
   .command(
@@ -43,7 +36,7 @@ yargs
     },
     argv => {
       if (argv.verbose) console.info(`Adding ${argv.client} to tokens`);
-      add(argv.client);
+      cmd.add(argv.client);
     }
   )
   .command(
@@ -58,7 +51,7 @@ yargs
     },
     argv => {
       if (argv.verbose) console.info(`Generating new keys for ${argv.client}`);
-      generate(argv.client);
+      cmd.generate(argv.client);
     }
   )
   .command(
@@ -73,7 +66,7 @@ yargs
     },
     argv => {
       if (argv.verbose) console.info(`Removing ${argv.client} from tokens`);
-      revoke(argv.client);
+      cmd.revoke(argv.client);
     }
   )
   .command(
@@ -88,7 +81,7 @@ yargs
         .example("node $0 list test_client");
     },
     argv => {
-      list(argv.client);
+      cmd.list(argv.client);
     }
   )
   .command(
@@ -104,7 +97,7 @@ yargs
         .example("node $0 email -e joe@bloggs.com test_client");
     },
     argv => {
-      email(argv.client, argv.email);
+      cmd.email(argv.client, argv.email);
     }
   )
   .command(
@@ -119,7 +112,7 @@ yargs
     },
     argv => {
       if (argv.verbose) console.info(`Displaying details for ${argv.client}`);
-      output(argv.client);
+      cmd.output(argv.client);
     }
   )
   .command(
@@ -134,7 +127,7 @@ yargs
     },
     argv => {
       if (argv.verbose) console.info(`Updating secret for ${argv.client}`);
-      secret(argv.client);
+      cmd.secret(argv.client);
     }
   )
   .help("h")

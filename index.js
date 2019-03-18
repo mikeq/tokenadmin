@@ -93,11 +93,16 @@ yargs
           alias: 'email',
           describe: 'Email address to send client details to',
         })
+        .option('base64', {
+          describe: 'Base64 encode the key pair',
+          default: false,
+        })
         .demandOption(['e'])
-        .example('node $0 email -e joe@bloggs.com test_client');
+        .example('node $0 email -e joe@bloggs.com test_client')
+        .example('node $0 email -e joe@bloggs.com --base64 test_client');
     },
     argv => {
-      cmd.email(argv.client, argv.email);
+      cmd.email(argv.client, argv.email, argv.base64);
     },
   )
   .command(
@@ -108,11 +113,16 @@ yargs
         .positional('client', {
           describe: 'client identifier to display (no spaces)',
         })
-        .example('node $0 output test_client');
+        .option('base64', {
+          describe: 'Base64 encode the key pair',
+          default: false,
+        })
+        .example('node $0 output test_client')
+        .example('node $0 output --base64 test_client');
     },
     argv => {
       if (argv.verbose) console.info(`Displaying details for ${argv.client}`);
-      cmd.output(argv.client);
+      cmd.output(argv.client, argv.base64);
     },
   )
   .command(
@@ -136,5 +146,5 @@ yargs
     alias: 'v',
     default: false,
   })
-  .boolean('v')
+  .boolean(['v', 'base64'])
   .epilog('Copyright © 2019 Mike Quinn').argv;

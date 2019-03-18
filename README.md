@@ -156,10 +156,10 @@ This mongo instance will be available on `mongodb://localhost:27017` (the defaul
 ## Using MailDev docker image for testing email sending
 
 ```bash
-λ docker run --rm --name mailer -p 1080:80 -p 25:25 -d djfarrelly/maildev:latest
+λ docker run --rm --name mailer -p 1080:80 -p 1025:25 -d djfarrelly/maildev:latest
 ```
 
-A test mail server is now available on `localhost` port `25` (the default settings in the app)
+A test mail server is now available on `localhost` port `1025` (the default settings in the app)
 
 A frontend for examining the sent email is available on [http://localhost:1080](http://localhost:1080)
 

@@ -10,6 +10,7 @@ Clone this repository, then run `yarn` in the project directory (or `npm install
 λ git clone git@github.com:mikeq/tokenadmin.git
 λ cd tokenadmin
 λ yarn
+... lots of stuff ...
 λ
 ```
 
@@ -24,7 +25,7 @@ There are various environment variables that can be set to customise the configu
 | `CLIENT_COLLECTION`  | Mongo collection name                             | `clients`                   |
 | `TOKEN_EMAIL_FROM`   | From address for any emails sent from the service | `tokens@example.com`        |
 | `TOKEN_MAIL_HOST`    | Host of mail server to use                        | `localhost`                 |
-| `TOKEN_MAIL_PORT`    | Port of mail server to use                        | `25`                        |
+| `TOKEN_MAIL_PORT`    | Port of mail server to use                        | `1025`                        |
 
 ## Running
 

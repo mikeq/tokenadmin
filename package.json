@@ -23,5 +23,21 @@
     "table": "^5.2.3",
     "uuid": "^3.3.2",
     "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@oakheart/ps-tools": "^1.0.7"
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "eslint_check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
+    "prettier": "prettier --write *.{js,jsx,json,css,md}",
+    "lint": "eslint --color .",
+    "test": "jest"
   }
 }

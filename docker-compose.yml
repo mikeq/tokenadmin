@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: localmongo
+    ports:
+      - 27017:27017
+    volumes:
+      - type: volume
+        source: mongo-token
+        target: /data/db
+    networks:
+      - token
+  maildev:
+    image: djfarrelly/maildev
+    container_name: localmail
+    ports:
+      - '1080:80'
+      - '1025:25'
+    networks:
+      - token
+volumes:
+  mongo-token:
+    external: true
+networks:
+  token:
+    driver: bridge

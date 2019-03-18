@@ -5,5 +5,5 @@ module.exports = {
   randomText: 'y78wdhwjhk48whf',
   mailFrom: process.env.TOKEN_EMAIL_FROM || 'tokens@example.com',
   mailHost: process.env.TOKEN_MAIL_HOST || 'localhost',
-  mailPort: process.env.TOKEN_MAIL_PORT || 25,
+  mailPort: process.env.TOKEN_MAIL_PORT || 1025,
 };
